@@ -35,7 +35,7 @@ public class TestPicture17
      Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
 
      //apic.explore(); //!!!!!!!!!!!!!!!!! DISPLAYS the picture
-     ferris1.explore();
+     //ferris1.explore();
     //gorge.explore();
      
      //to chnage color of picture get all of the pixels
@@ -67,21 +67,42 @@ public class TestPicture17
     //need to re-explore everytime
     spot.setColor(Color.yellow);
   //  spot2.setColor(Color.grey);
-    ferris1.explore();
+    //ferris1.explore();
     
 /*
     pixels[17].setColor(Color.blue);
     spot.setColor(new Color(252,252,252));
     pixels[500034].setColor(Color.blue);
     ferris1.explore();
-/*
+/**/
+
    // loop to access indexes of array or collection
-
     //for each loop spot  is a ?
-    for (Pixel spot : pixels)
-    System.out.println( spot );
-
-
+    int red;
+    for (Pixel spot1 : pixels) //this changed the color of red ,utiplied by .25
+    {
+        //System.out.println(spot1);
+        red=spot1.getRed();
+        red = (int)(red*.25);
+        spot1.setRed(red);
+    }
+    //ferris1.explore();
+    int green;
+    int count = 0;
+    for (Pixel colorspot : pixels) 
+    {
+        if (count%20 ==0)
+        {
+            colorspot.setColor(Color.yellow);
+        }
+        count++;
+        /**
+        green = colorspot.getGreen();
+        green = (int)(green*.5);
+        colorspot.setGreen(green);
+        /**/
+    }
+    ferris1.explore();
    
  /**/
 
