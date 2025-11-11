@@ -150,7 +150,8 @@ final double  FACTOR = .5;
 
   /**/ 
     //write/save a picture as a file
-    ferris1.write("images/ferris11.jpg");
+    //               folder\\name.type
+    //ferris1.write("images/ferris11.jpg");
 
     /**/
   }//main
