@@ -105,11 +105,11 @@ public class ColorLabs
         }
         arch.explore();
         
+        //adjust color
         for (Pixel spot6 : pixels6)//forest
         {
-           spot6.setRed((int)(spot6.getRed()*2.86));
-           spot6.setGreen((int)(spot6.getGreen()*1.75));
-           spot6.setBlue((int)(spot6.getBlue()*2.309)); 
+           spot6.setRed((int)(spot6.getRed()*1.8675309));
+
         }
         forest.explore();
     }
