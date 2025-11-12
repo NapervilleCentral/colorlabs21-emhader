@@ -19,19 +19,24 @@ public class ColorLabs
         Picture arch = new Picture("images\\arch.jpg");
         Picture forest = new Picture("images\\CumberlandIsland.jpg");
         
-        //beach.explore();
-        //grove.explore();
-        //temple.explore();
-        //arch.explore();
-        //forest.explore();
-        //cat.explore();
-        
         Pixel [] pixels1; //creates array
         pixels1 = beach.getPixels(); // puts all the pixels inside the array
+        
         Pixel [] pixels2;
         pixels2 = grove.getPixels();
+        
         Pixel [] pixels3;
         pixels3 = cat.getPixels();
+        
+        Pixel [] pixels4;
+        pixels4 = temple.getPixels();
+        
+        Pixel [] pixels5;
+        pixels5 = arch.getPixels();
+        
+        Pixel [] pixels6;
+        pixels6 = forest.getPixels();
+        
         int negate;
         int r, g, b;
         int avg = 0, total = 0;
@@ -70,6 +75,42 @@ public class ColorLabs
             spot3.setBlue((int)(spot3.getBlue()*1.5));
         }
         cat.explore();
-        /**/
+        
+        /*
+        //darken
+        for(Pixel spot4 : pixels4)//temple
+        {
+            spot4.setRed((int)(spot4.getRed()*.5));
+            spot4.setGreen((int)(spot4.getGreen()*.5));
+            spot4.setBlue((int)(spot4.getBlue()*.5));
+        }/**/
+        //temple.explore();
+        
+        //change color
+        for (Pixel spot4 : pixels4)//temple
+        {
+            if(spot4.getRed() > 180 && spot4.getGreen() > 180)
+            {
+              spot4.setColor(Color.green);
+            }
+        }
+        temple.explore();
+        
+        //colorify
+        for (Pixel spot5 : pixels5)//arch
+        {
+            spot5.setRed((int)(spot5.getRed()*.7));
+            spot5.setGreen((int)(spot5.getGreen()*.7));
+            spot5.setBlue((int)(spot5.getBlue()*1.7));
+        }
+        arch.explore();
+        
+        for (Pixel spot6 : pixels6)//forest
+        {
+           spot6.setRed((int)(spot6.getRed()*2.86));
+           spot6.setGreen((int)(spot6.getGreen()*1.75));
+           spot6.setBlue((int)(spot6.getBlue()*2.309)); 
+        }
+        forest.explore();
     }
 }
