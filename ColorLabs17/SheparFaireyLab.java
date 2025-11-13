@@ -23,7 +23,7 @@ public class SheparFaireyLab
          Picture MeandDogGrey1 = new Picture("images\\MeandDog GREY SCALE.jpg");
          Picture MeandDogGrey2 = new Picture("images\\MeandDog GREY SCALE.jpg");
          
-         MeandDogGrey1.explore();
+         //MeandDogGrey1.explore();
          //method 1 change
          Pixel [] pixels1;
          pixels1 = MeandDog.getPixels();
@@ -54,7 +54,7 @@ public class SheparFaireyLab
             else if (r >=192 && r < 256 && g >= 192 && g < 256 && b >=192 && b<256) spot.setColor(offWhite);
          }
          //MeandDog.explore();
-         //MeandDog.write("images\\MeandDog2.jpg");
+         MeandDog.write("images\\MeandDog Meth1 Final.jpg");
          
          //method 2 change
          Pixel [] pixels2;
@@ -84,8 +84,8 @@ public class SheparFaireyLab
          
          //System.out.println(maxr+" "+maxg+" "+maxb);
          //System.out.println(minr+" "+ming+" "+minb);
-         MeandDogGrey1.explore();
-         //MeandDogGrey1.write("images\\MeandDog3.jpg");
+         //MeandDogGrey1.explore();
+         //MeandDogGrey1.write("images\\MeandDog Meth2 Final.jpg");
          
          /**
           * custom color palette
