@@ -23,7 +23,7 @@ public class SheparFaireyLab
          Picture MeandDogGrey1 = new Picture("images\\MeandDog GREY SCALE.jpg");
          Picture MeandDogGrey2 = new Picture("images\\MeandDog GREY SCALE.jpg");
          
-         //MeandDogGrey1.explore();
+         MeandDogGrey1.explore();
          //method 1 change
          Pixel [] pixels1;
          pixels1 = MeandDog.getPixels();
@@ -90,12 +90,35 @@ public class SheparFaireyLab
          /**
           * custom color palette
           */
-         Color Grey = new Color(93, 120, 122);
-         Color darkGrey = new Color(74, 89, 91);
+         Color Grey = new Color(140, 140, 140);
+         Color darkGrey = new Color(89, 89, 89);
          Color darkTeal = new Color(1, 87, 95);
-         Color teal = new Color(1, 116, 127);
+         Color teal = new Color(2, 174, 190);
+         Color pink = new Color(179, 115, 152);
+         Color purple = new Color(166, 38, 227);
+         Pixel [] pixels3;
+         pixels3 = MeandDogGrey2.getPixels();
          
-         //MeandDogGrey2.write("images\\MeandDog2.jpg");
+         for (Pixel spot: pixels3)
+         { // add red dwon the line in  the middle
+            int r = spot.getRed();
+            int g = spot.getGreen();
+            int b = spot.getBlue();/*
+            if (r > maxr) maxr = r;
+            if (r < minr) minr = r;
+            if (g > maxg) maxg = g;
+            if (g < ming) ming = g;
+            if (b > maxb) maxb = b;
+            if (b < minb) minb = b;/**/
+            if ( r < 10) spot.setColor(darkGrey);
+            else if (r >=10 && r < 50) spot.setColor(darkTeal);
+            else if (r >=50 && r < 80) spot.setColor(Grey);
+            else if (r >= 80 && r <= 100) spot.setColor(purple); 
+            else if (r > 100 && r < 125) spot.setColor(teal);
+            else if (r >=125) spot.setColor(pink);
+         }
+         MeandDogGrey2.explore();
+         MeandDogGrey2.write("images\\MeandDog Meth3 try 3.jpg");
          
     }//main       
 }//class
