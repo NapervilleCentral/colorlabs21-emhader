@@ -115,10 +115,11 @@ public class SheparFaireyLab
             else if (r >=50 && r < 80) spot.setColor(Grey);
             else if (r >= 80 && r <= 100) spot.setColor(purple); 
             else if (r > 100 && r < 125) spot.setColor(teal);
-            else if (r >=125) spot.setColor(pink);
+            else if (r > 125 && r < 135) spot.setColor(red);
+            else if (r >=135) spot.setColor(pink);
          }
          MeandDogGrey2.explore();
-         MeandDogGrey2.write("images\\MeandDog Meth3 try 3.jpg");
+         //MeandDogGrey2.write("images\\MeandDog Meth3 try 4.jpg");
          
     }//main       
 }//class
