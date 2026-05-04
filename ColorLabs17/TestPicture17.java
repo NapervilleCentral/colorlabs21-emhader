@@ -12,147 +12,222 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
 public class TestPicture17
 {
 
+    public static Picture berserk = new Picture("images\\Berserk.jpg");
+    public static Picture canvas = new Picture("images\\canvas.jpg");
     /**
      * main method, to test the picture
      *
      */
   public static void main(String[] args)
   {
-      //opens picture using a dialog box
-      /**
-     String fileName = FileChooser.pickAFile();
-     Picture pictObj = new Picture(fileName);
-     pictObj.explore();
-     /**/
-     
-     //opens a pictue using an absolute path
-     //Picture apic = new Picture("C:\\Users\\khayes\\Favorites\\Documents\APCS- Java\chap03\Curriclum 2013\Picture Color labs\images\\beach.jpg");
-     
-     //relative path         directary/folder/file (MUST BHAVE THE FOLDER OR FILE IN THE SMAE DIRECTERY (folder) AS YOUR CODE)
-     Picture apic = new Picture("images\\beach.jpg");
-     Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
-     Picture gorge = new Picture("images/2000 gorge.jpg");
-     Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
-
-     //apic.explore(); //!!!!!!!!!!!!!!!!! DISPLAYS the picture
-     //ferris1.explore();
-    //gorge.explore();
-     
-     //to chnage color of picture get all of the pixels
-     //makes an array of pixels
-     Pixel[] pixels;
-     
-     //gets pixels from picture and assigns to pixels array
-     pixels = ferris1.getPixels();
+          /**
+          //opens picture using a dialog box
+          /**
+         String fileName = FileChooser.pickAFile();
+         Picture pictObj = new Picture(fileName);
+         pictObj.explore();
+         
+         
+         //opens a pictue using an absolute path
+         //Picture apic = new Picture("C:\\Users\\khayes\\Favorites\\Documents\APCS- Java\chap03\Curriclum 2013\Picture Color labs\images\\beach.jpg");
+         
+         //relative path         directary/folder/file (MUST BHAVE THE FOLDER OR FILE IN THE SMAE DIRECTERY (folder) AS YOUR CODE)
+         Picture apic = new Picture("images\\beach.jpg");
+         Picture ferris1 = new Picture("images/2000 ferris wheel2.jpg");
+         Picture gorge = new Picture("images/2000 gorge.jpg");
+         Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
     
-     //how many pixels or how large array
-    System.out.println("This is a large array"+pixels.length  );
-
-
-    /**/
-    //access each index, array notation
-    System.out.println(pixels[17]);
-    //access each pixel picture.method.getPixel();
-    Pixel spot = ferris1.getPixel(100,100);
-    Pixel spot2 = ferris1.getPixel(50,50);
-    Color grey = new Color(92, 194, 214);
+         
+         
+         //apic.explore(); //!!!!!!!!!!!!!!!!! DISPLAYS the picture
+         //ferris1.explore();
+        //gorge.explore();
+         
+         //to chnage color of picture get all of the pixels
+         //makes an array of pixels
+         Pixel[] pixels;
+         
+         //gets pixels from picture and assigns to pixels array
+         pixels = ferris1.getPixels();
+        
+         //how many pixels or how large array
+        System.out.println("This is a large array"+pixels.length  );
     
-    System.out.println(pixels[17].getColor());
-    System.out.println(spot);
     
-    Pixel spot17 = pixels[17];
-    spot17.setRed(200);
-    spot17.setBlue(255);
-    spot17.setGreen(220);
-    //need to re-explore everytime
-    spot.setColor(Color.yellow);
-  //  spot2.setColor(Color.grey);
-    //ferris1.explore();
+        //access each index, array notation
+        System.out.println(pixels[17]);
+        //access each pixel picture.method.getPixel();
+        Pixel spot = ferris1.getPixel(100,100);
+        Pixel spot2 = ferris1.getPixel(50,50);
+        Color grey = new Color(92, 194, 214);
+        
+        System.out.println(pixels[17].getColor());
+        System.out.println(spot);
+        
+        Pixel spot17 = pixels[17];
+        spot17.setRed(200);
+        spot17.setBlue(255);
+        spot17.setGreen(220);
+        //need to re-explore everytime
+        spot.setColor(Color.yellow);
+      //  spot2.setColor(Color.grey);
+        //ferris1.explore();
+        
+        /*
+        pixels[17].setColor(Color.blue);
+        spot.setColor(new Color(252,252,252));
+        pixels[500034].setColor(Color.blue);
+        ferris1.explore();
     
-/*
-    pixels[17].setColor(Color.blue);
-    spot.setColor(new Color(252,252,252));
-    pixels[500034].setColor(Color.blue);
-    ferris1.explore();
-/**/
-
-   // loop to access indexes of array or collection
-    //for each loop spot  is a ?
-    int red;
-    for (Pixel spot1 : pixels) //this changed the color of red ,utiplied by .25
-    {
-        //System.out.println(spot1);
-        red=spot1.getRed();
-        red = (int)(red*.25);
-        spot1.setRed(red);
-    }
-    //ferris1.explore();
-    int green;
-    int count = 0;
-    for (Pixel colorspot : pixels) 
-    {
-        if (count%20 ==0)
+    
+       // loop to access indexes of array or collection
+        //for each loop spot  is a ?
+        int red;
+        for (Pixel spot1 : pixels) //this changed the color of red ,utiplied by .25
         {
-            colorspot.setColor(Color.yellow);
+            //System.out.println(spot1);
+            red=spot1.getRed();
+            red = (int)(red*.25);
+            spot1.setRed(red);
         }
-        count++;
-        /**
-        green = colorspot.getGreen();
-        green = (int)(green*.5);
-        colorspot.setGreen(green);
-        /**/
-    }
-    ferris1.explore();
-   
- /**/
-
- /**
-  * Method to clear red from picture
-  * @param none
-  * @return none
-  */
- /*
-    for (Pixel pixelObj : pixels)
+        //ferris1.explore();
+        int green;
+        int count = 0;
+        for (Pixel colorspot : pixels) 
         {
-            //set the red value of the current pixel to the new value
+            if (count%20 ==0)
+            {
+                colorspot.setColor(Color.yellow);
+            }
+            count++;
+            /**
+            green = colorspot.getGreen();
+            green = (int)(green*.5);
+            colorspot.setGreen(green);
+            
+        }
+        //ferris1.explore();
            
-
-        }
-    ferris1.explore();
+         /**/
+        
+         /**
+          * Method to clear red from picture
+          * @param none
+          * @return none
+          */
+         /*
+        for (Pixel pixelObj : pixels)
+            {
+                //set the red value of the current pixel to the new value
+               
     
-/**/
- /**
-  * Method to reduce red from picture by a factor of n
-  * @param none
-  * @return none
-  */
-
-/*
-int value;
-final double  FACTOR = .5;
-    for (Pixel pixelObj : pixels)
-    {
-
-        //get the redvalue
-        value = pixelObj.getRed();
-        //System.out.println(value);
-
-        //decrease the red value by 50%
+            }
+        ferris1.explore();
         
-        //set the red value of the current pixel to the new value
+        /**/
+         /**
+          * Method to reduce red from picture by a factor of n
+          * @param none
+          * @return none
+          */
         
-
-    }
-    // use new picture when changing or it will make changes to 
-    // pic you already changed
-    ferris1.explore();
-    ferris2.explore();
-
-  /**/ 
-    //write/save a picture as a file
-    //               folder\\name.type
-    //ferris1.write("images/ferris11.jpg");
-
-    /**/
+        /*
+        int value;
+        final double  FACTOR = .5;
+        for (Pixel pixelObj : pixels)
+        {
+    
+            //get the redvalue
+            value = pixelObj.getRed();
+            //System.out.println(value);
+    
+            //decrease the red value by 50%
+            
+            //set the red value of the current pixel to the new value
+            
+    
+        }
+        // use new picture when changing or it will make changes to 
+        // pic you already changed
+        ferris1.explore();
+        ferris2.explore();
+    
+          /**/ 
+        //write/save a picture as a file
+        //               folder\\name.type
+        //ferris1.write("images/ferris11.jpg");
+        /**/
+        
+        //#original
+        //berserk.explore(); 
+        
+        //# flipped vertically
+        //mirrorVertical();
+        //berserk.explore();
+        
+        //#Coppied onto new pciture
+        //copytoCanvas(berserk, canvas);
+        //canvas.explore();
+        
+        
   }//main
+  
+  
+  
+  /**
+   *     Mirror around a Vertical line
+   **/
+  public static void mirrorVertical()
+  {
+      int width = berserk.getWidth();
+      int mirrorPoint = width/2;
+      
+      Pixel leftPixel = null;
+      Pixel rightPixel = null;
+      
+      //loop through all the rows
+      for(int y = 0; y < berserk.getHeight(); y++)
+      {
+          //loop from 0 - middle (mirror point0
+          for(int x = 0; x < mirrorPoint; x++)
+          {
+             leftPixel = berserk.getPixel(x,y);
+             rightPixel = berserk.getPixel(width-1-x, y); 
+             rightPixel.setColor(leftPixel.getColor());
+          }
+      }
+  }
+  
+  
+  /**
+   * Add two ints to parameter and thats the palce where you want target to go onto
+   * the canvas
+   **/
+  public static void copytoCanvas(Picture source, Picture target)
+  {
+      Pixel sourcePix = null;
+      Pixel targetPix = null;
+      
+      //# loop through columns (target x is starting point on Canvas)
+      for(int sourceX = 0, targetX = 0; sourceX < source.getWidth();sourceX++, targetX++)
+      {
+         //loop thhrough the rows
+         for(int sourceY = 0, targetY = 0; sourceY < source.getHeight();sourceY++, targetY++)
+         {
+              sourcePix = source.getPixel(sourceX, sourceY);
+              targetPix = target.getPixel(targetX, targetY);
+              targetPix.setColor(sourcePix.getColor());
+         } 
+      }
+  }
+  
+  
+  public static void MirrorTemple()
+  {
+      Picture temple = new Picture("images\\temple.jpg");
+      temple.explore();
+      //bottom is y = 107
+      //left side is x = 12
+      //right side is x = 540
+  }
 }//class
