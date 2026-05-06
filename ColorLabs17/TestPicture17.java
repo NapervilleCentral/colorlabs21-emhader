@@ -169,7 +169,8 @@ public class TestPicture17
         //copytoCanvas(berserk, canvas);
         //canvas.explore();
         
-        
+        redToBlue();
+        berserk.explore();
   }//main
   
   
@@ -199,6 +200,29 @@ public class TestPicture17
   }
   
   
+
+  public static void redToBlue()
+  {
+      Pixel spot = null;
+      for(int y = 0; y < berserk.getHeight(); y++)
+      {
+          for(int x = 0; x < berserk.getWidth(); x++)
+          {
+              spot = berserk.getPixel(x,y);
+              spot.setBlue(spot.getRed());
+
+          }
+      }
+  }
+  
+  /**
+  public static void sendIn()
+  {
+      Pixel
+  }
+    /**/
+    
+  
   /**
    * Add two ints to parameter and thats the palce where you want target to go onto
    * the canvas
@@ -227,7 +251,26 @@ public class TestPicture17
       Picture temple = new Picture("images\\temple.jpg");
       temple.explore();
       //bottom is y = 107
-      //left side is x = 12
-      //right side is x = 540
+      //left side is x = 22
+      //right side is x = 532
+      //loop through all the rows
+      
+      int width = 540;
+      int mirrorPoint = 300;
+      
+      Pixel leftPixel = null;
+      Pixel rightPixel = null;
+      
+      for(int y = 0; y < 107; y++)
+      {
+          //loop from 0 - middle (mirror point0
+          for(int x = 22; x < mirrorPoint; x++)
+          {
+             leftPixel = temple.getPixel(x,y);
+             rightPixel = temple.getPixel(width-1-x, y); 
+             rightPixel.setColor(leftPixel.getColor());
+          }
+      }
+      temple.explore();
   }
 }//class

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=PosterBoardProject
+comment1.params=
+comment1.target=void\ mirrorVertical()
+comment2.params=
+comment2.target=void\ redToBlue()
+comment3.params=
+comment3.target=void\ sendIn()
+comment4.params=width\ height
+comment4.target=void\ sendIn(int,\ int)
+comment5.params=source\ target
+comment5.target=void\ copytoCanvas(Picture,\ Picture)
+comment5.text=\r\n\ Add\ two\ ints\ to\ parameter\ and\ thats\ the\ palce\ where\ you\ want\ target\ to\ go\ onto\r\n\ the\ canvas\r\n
+numComments=6
