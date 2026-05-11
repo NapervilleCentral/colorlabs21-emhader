@@ -66,23 +66,21 @@ public class PosterBoardProject
   
   
   //makes all the red things more blue
-  public static void aGrey()
+  public static void greyScale()
   {
       Picture berserk = new Picture("images\\Berserk.jpg");
-      Pixel spot = null;
-      int avg;
+      Pixel spot2 = null;
+      int avg, total;
       for(int y = 0; y < berserk.getHeight(); y++)
       {
           for(int x = 0; x < berserk.getWidth(); x++)
           {
-              spot = berserk.getPixel(x,y);
-              if(spot.getRed() < 100 && spot.getGreen() > 150)
-              {
-                  avg = (int)spot.getAverage();
-                  spot.setRed(avg);
-                 spot.setGreen(avg);
-                 spot.setBlue(avg);
-              }
+              spot2 = berserk.getPixel(x,y);
+              total = (spot2.getRed() + spot2.getGreen() + spot2.getBlue());
+            avg = total/3;
+            spot2.setRed(avg);
+            spot2.setGreen(avg);
+            spot2.setBlue(avg);
           }
       }
       berserk.explore();
@@ -94,9 +92,8 @@ public class PosterBoardProject
   {
       Picture berserk = new Picture("images\\Berserk.jpg");
       Pixel spot = null;
-      int red;
-      int green;
-      int blue;
+      int red, green, blue;
+      
       for(int y = 0; y < berserk.getHeight(); y++)
       {
           for(int x = 0; x < berserk.getWidth(); x++)
@@ -125,9 +122,8 @@ public class PosterBoardProject
       Pixel spot1 = null;
       Pixel spot2 = null;
       
-      int red;
-      int green;
-      int blue;
+      int red, green, blue;
+      
       for(int y = 0; y < berserk.getHeight(); y++)
       {
           for(int x = 0; x < berserk.getWidth(); x++)
@@ -146,6 +142,35 @@ public class PosterBoardProject
       berserk.explore();
   }
   
+
+  
+  public static void EathonOverlap()
+  {
+      Picture berserk = new Picture("images\\Berserk.jpg");
+      Picture pipen = new Picture("images\\Eathon.jpg");
+      
+      Pixel spot1 = null;
+      Pixel spot2 = null;
+      
+      int red, green, blue;
+      
+      for(int y = 0; y < berserk.getHeight(); y++)
+      {
+          for(int x = 0; x < berserk.getWidth(); x++)
+          {
+              spot1 = berserk.getPixel(x,y);
+              spot2 = pipen.getPixel(x,y);
+              red = (spot1.getRed() + spot2.getRed()) /2;
+              green = (spot1.getGreen() + spot2.getGreen()) /2;
+              blue = (spot1.getBlue() + spot2.getBlue()) /2;
+              
+              spot1.setRed(red);
+              spot1.setGreen(green);
+              spot1.setBlue(blue);
+          }
+      }
+      berserk.explore();
+  }
   
   
   
