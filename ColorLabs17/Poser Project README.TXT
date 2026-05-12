@@ -14,4 +14,13 @@ USER INSTRUCTIONS: short paragraph on how you manipulated the original picture
 Inverse Colors: I took the original RGB values of each pixel and i did 255-OG value to get the inverse of it
 Overlap: I took the average of the RGB Values and i set the colors to the average of them
 
+Grey Scale: I took the values of the RGB and averaged them out then set that pixels RGB values to that color
+
+Mirror Vertical: I copied each of the pixels over onto the opposite side of the picture straight down the middle
+
+Overlap: I took the average RGB Values between the two pictures at the same pixel spot then i set the RGB values of the original picture to that number
+
+Rotate: 
+
+Recursively send inwards: I took the same picture every time and i took the distance used a forth distance of it to + what was already there for its starting position then I took half of the last one made to create the distance across then took every other number of some pixels to make it smaller
 

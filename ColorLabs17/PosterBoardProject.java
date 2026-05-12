@@ -11,12 +11,18 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
 public class PosterBoardProject
 {
     
-    //public static Picture canvas = new Picture("images\\canvas.jpg");
+    public static Picture canvas = new Picture("images\\canvas.jpg");
     
     public static void main(String[] args)
     {
-        Picture berserk = new Picture("images\\Berserk.jpg");
-        berserk.explore();
+        Picture ColorInvert = new Picture("images\\BerserkCI.jpg");
+        Picture GreyScale = new Picture("images\\BerserkGS.jpg");
+        Picture MirroVertical = new Picture("images\\BerserkMV.jpg");
+        Picture POverlap = new Picture("images\\BerserkOL.jpg");
+        Picture rotated = new Picture("images\\BerserkR90.jpg");
+        Picture Recursive = new Picture("images\\BerserkRS.jpg");
+        
+        
     }
     
     
@@ -42,7 +48,7 @@ public class PosterBoardProject
              rightPixel.setColor(leftPixel.getColor());
           }
       }
-      berserk.explore();
+       //#------------------------------
   }
   
   
@@ -83,7 +89,7 @@ public class PosterBoardProject
             spot2.setBlue(avg);
           }
       }
-      berserk.explore();
+      //#---------------------------
   }
   
   
@@ -108,7 +114,7 @@ public class PosterBoardProject
               spot.setBlue(blue);
           }
       }
-      berserk.explore();
+      //#-------------------------
   }
   
   
@@ -139,10 +145,39 @@ public class PosterBoardProject
               spot1.setBlue(blue);
           }
       }
-      berserk.explore();
+      //#-------------------------
   }
   
-
+public static void EMOverlap()
+  {
+      Picture berserk = new Picture("images\\Berserk.jpg");
+      Picture ethon = new Picture("images\\Eathon.jpg");
+      Picture manny = new Picture("images\\manny.jpg");
+      
+      Pixel spot1 = null;
+      Pixel spot2 = null;
+      Pixel spot3 = null;
+      
+      int red, green, blue;
+      
+      for(int y = 0; y < berserk.getHeight(); y++)
+      {
+          for(int x = 0; x < berserk.getWidth(); x++)
+          {
+              spot1 = berserk.getPixel(x,y);
+              spot2 = ethon.getPixel(x,y);
+              spot3 = manny.getPixel(x,y);
+              red = (spot1.getRed() + spot2.getRed() + spot3.getRed()) /3;
+              green = (spot1.getGreen() + spot2.getGreen() + spot3.getGreen()) /3;
+              blue = (spot1.getBlue() + spot2.getBlue() + spot3.getBlue()) /3;
+              
+              spot1.setRed(red);
+              spot1.setGreen(green);
+              spot1.setBlue(blue);
+          }
+      }
+      berserk.explore();
+  }
   
   public static void EathonOverlap()
   {
@@ -211,7 +246,7 @@ public class PosterBoardProject
   {
     Picture berserk = new Picture("images\\Berserk.jpg");
     sendIn(berserk, 0, 0, berserk.getWidth(), berserk.getHeight());
-    berserk.explore();
+    //#----------------------
   }
   private static void sendIn(Picture pic, int startX, int startY, int width, int height)
   {
@@ -273,7 +308,7 @@ public static void rotate90()
         }
     }
 
-    rotated.explore();
+    //#---------------------------
 }
   
   
@@ -284,7 +319,7 @@ public static void rotate90()
    **/
   public static void copytoCanvas(Picture source, Picture target)
   {
-      Picture berserk = new Picture("images\\Berserk.jpg");
+      
       Pixel sourcePix = null;
       Pixel targetPix = null;
       
@@ -299,6 +334,6 @@ public static void rotate90()
               targetPix.setColor(sourcePix.getColor());
          } 
       }
-      berserk.explore();
+
   }
 }
