@@ -214,6 +214,38 @@ public class PosterBoardProject
   
   
   
+  // rotates berserk image 90 degrees clockwise
+public static void rotate90()
+{
+    Picture berserk = new Picture("images\\Berserk.jpg");
+
+    int oldWidth = berserk.getWidth();
+    int oldHeight = berserk.getHeight();
+
+    // rotated picture has flipped dimensions
+    Picture rotated = new Picture(oldHeight, oldWidth);
+
+    Pixel oldPixel = null;
+    Pixel newPixel = null;
+
+    for(int y = 0; y < oldHeight; y++)
+    {
+        for(int x = 0; x < oldWidth; x++)
+        {
+            oldPixel = berserk.getPixel(x, y);
+
+            // 90 degree clockwise rotation formula
+            newPixel = rotated.getPixel(oldHeight - 1 - y, x);
+
+            newPixel.setColor(oldPixel.getColor());
+        }
+    }
+
+    rotated.explore();
+}
+  
+  
+  
   /**
    * Add two ints to parameter and thats the palce where you want target to go onto
    * the canvas
