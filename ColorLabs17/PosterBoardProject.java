@@ -174,6 +174,38 @@ public class PosterBoardProject
   
   
   
+
+  
+  public static void MannyOverlap()
+  {
+      Picture berserk = new Picture("images\\Berserk.jpg");
+      Picture pipen = new Picture("images\\manny.jpg");
+      
+      Pixel spot1 = null;
+      Pixel spot2 = null;
+      
+      int red, green, blue;
+      
+      for(int y = 0; y < berserk.getHeight(); y++)
+      {
+          for(int x = 0; x < berserk.getWidth(); x++)
+          {
+              spot1 = berserk.getPixel(x,y);
+              spot2 = pipen.getPixel(x,y);
+              red = (spot1.getRed() + spot2.getRed()) /2;
+              green = (spot1.getGreen() + spot2.getGreen()) /2;
+              blue = (spot1.getBlue() + spot2.getBlue()) /2;
+              
+              spot1.setRed(red);
+              spot1.setGreen(green);
+              spot1.setBlue(blue);
+          }
+      }
+      berserk.explore();
+  }
+  
+  
+  
   //recursivley makes the image smaller in the middle
   public static void sendIn()
   {
