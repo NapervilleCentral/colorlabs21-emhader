@@ -20,7 +20,7 @@ Mirror Vertical: I copied each of the pixels over onto the opposite side of the 
 
 Overlap: I took the average RGB Values between the two pictures at the same pixel spot then i set the RGB values of the original picture to that number
 
-Rotate: 
+Rotate 180: I get a new blank page and i put the pixel at a location from the source onto the target in the inverse position 
 
 Recursively send inwards: I took the same picture every time and i took the distance used a forth distance of it to + what was already there for its starting position then I took half of the last one made to create the distance across then took every other number of some pixels to make it smaller
 

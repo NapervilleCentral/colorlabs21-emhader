@@ -19,10 +19,18 @@ public class PosterBoardProject
         Picture GreyScale = new Picture("images\\BerserkGS.jpg");
         Picture MirroVertical = new Picture("images\\BerserkMV.jpg");
         Picture POverlap = new Picture("images\\BerserkOL.jpg");
-        Picture rotated = new Picture("images\\BerserkR90.jpg");
+        Picture rotated = new Picture("images\\BerserkR180.jpg");
         Picture Recursive = new Picture("images\\BerserkRS.jpg");
         
+        copytoCanvas(ColorInvert,  canvas, 0, 0);
+        copytoCanvas(GreyScale,  canvas, GreyScale.getWidth(), 0);
+        copytoCanvas(MirroVertical,  canvas, (MirroVertical.getWidth()*2), 0);
+        copytoCanvas(POverlap,  canvas, 0, POverlap.getHeight());
+        copytoCanvas(rotated,  canvas, rotated.getWidth(), rotated.getHeight());
+        copytoCanvas(Recursive,  canvas, (Recursive.getWidth()*2), Recursive.getHeight());
         
+        canvas.explore();
+        //canvas.write("images\\FinalCallege.jpg");
     }
     
     
@@ -281,34 +289,34 @@ public static void EMOverlap()
   
   
   
-  // rotates berserk image 90 degrees clockwise
-public static void rotate90()
+
+// rotates berserk image 180 degrees
+public static void rotate180()
 {
     Picture berserk = new Picture("images\\Berserk.jpg");
 
-    int oldWidth = berserk.getWidth();
-    int oldHeight = berserk.getHeight();
+    int width = berserk.getWidth();
+    int height = berserk.getHeight();
 
-    // rotated picture has flipped dimensions
-    Picture rotated = new Picture(oldHeight, oldWidth);
+    Picture rotated = new Picture(width, height);
 
     Pixel oldPixel = null;
     Pixel newPixel = null;
 
-    for(int y = 0; y < oldHeight; y++)
+    for(int y = 0; y < height; y++)
     {
-        for(int x = 0; x < oldWidth; x++)
+        for(int x = 0; x < width; x++)
         {
             oldPixel = berserk.getPixel(x, y);
 
-            // 90 degree clockwise rotation formula
-            newPixel = rotated.getPixel(oldHeight - 1 - y, x);
+            // 180 degree rotation formula
+            newPixel = rotated.getPixel(width - 1 - x, height - 1 - y);
 
             newPixel.setColor(oldPixel.getColor());
         }
     }
-
     //#---------------------------
+    //rotated.write("images\\BerserkR180.jpg");
 }
   
   
@@ -317,23 +325,49 @@ public static void rotate90()
    * Add two ints to parameter and thats the palce where you want target to go onto
    * the canvas
    **/
-  public static void copytoCanvas(Picture source, Picture target)
+  public static void copytoCanvas(Picture source, Picture target, int x, int y)
   {
       
       Pixel sourcePix = null;
       Pixel targetPix = null;
       
       //# loop through columns (target x is starting point on Canvas)
-      for(int sourceX = 0, targetX = 0; sourceX < source.getWidth();sourceX++, targetX++)
+      for(int sourceX = 0, targetX = x; sourceX < source.getWidth();sourceX++, targetX++)
       {
          //loop thhrough the rows
-         for(int sourceY = 0, targetY = 0; sourceY < source.getHeight();sourceY++, targetY++)
+         for(int sourceY = 0, targetY = y; sourceY < source.getHeight();sourceY++, targetY++)
          {
               sourcePix = source.getPixel(sourceX, sourceY);
               targetPix = target.getPixel(targetX, targetY);
               targetPix.setColor(sourcePix.getColor());
          } 
       }
+    
+  }
+  
+  //283, 404 center pixel
+  public void circle()
+  {
+    Picture berserk = new Picture("images\\Berserk.jpg");
 
+    int width = berserk.getWidth();
+    int height = berserk.getHeight();
+
+    Picture rotated = new Picture("images\\canvas.jpg");
+
+    Pixel oldPixel = null;
+    Pixel newPixel = null;
+
+    for(int y = 0; y < height; y++)
+    {
+        for(int x = 0; x < width; x++)
+        {
+            oldPixel = berserk.getPixel(x,y);
+            //(h,k) is center of circle
+            //(x-h)^2+(y-k)^2=r^2
+            //y=k+sqrt{r^2-(x-h)^2
+            //x=h+sqrt{r^2-(y-k)^2}
+        }
+    }
   }
 }
