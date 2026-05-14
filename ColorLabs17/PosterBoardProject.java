@@ -21,16 +21,17 @@ public class PosterBoardProject
         Picture POverlap = new Picture("images\\BerserkOL.jpg");
         Picture rotated = new Picture("images\\BerserkR180.jpg");
         Picture Recursive = new Picture("images\\BerserkRS.jpg");
+        Picture OG = new Picture("images\\Berserk.jpg");
         
         copytoCanvas(ColorInvert,  canvas, 0, 0);
-        copytoCanvas(GreyScale,  canvas, GreyScale.getWidth(), 0);
+        copytoCanvas(OG,  canvas, OG.getWidth(), 0);
         copytoCanvas(MirroVertical,  canvas, (MirroVertical.getWidth()*2), 0);
         copytoCanvas(POverlap,  canvas, 0, POverlap.getHeight());
         copytoCanvas(rotated,  canvas, rotated.getWidth(), rotated.getHeight());
         copytoCanvas(Recursive,  canvas, (Recursive.getWidth()*2), Recursive.getHeight());
         
         canvas.explore();
-        //canvas.write("images\\FinalCallege.jpg");
+        canvas.write("images\\FinalCallege.jpg");
     }
     
     
