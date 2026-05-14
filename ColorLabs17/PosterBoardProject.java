@@ -345,29 +345,5 @@ public static void rotate180()
     
   }
   
-  //283, 404 center pixel
-  public void circle()
-  {
-    Picture berserk = new Picture("images\\Berserk.jpg");
-
-    int width = berserk.getWidth();
-    int height = berserk.getHeight();
-
-    Picture rotated = new Picture("images\\canvas.jpg");
-
-    Pixel oldPixel = null;
-    Pixel newPixel = null;
-
-    for(int y = 0; y < height; y++)
-    {
-        for(int x = 0; x < width; x++)
-        {
-            oldPixel = berserk.getPixel(x,y);
-            //(h,k) is center of circle
-            //(x-h)^2+(y-k)^2=r^2
-            //y=k+sqrt{r^2-(x-h)^2
-            //x=h+sqrt{r^2-(y-k)^2}
-        }
-    }
-  }
+ 
 }
